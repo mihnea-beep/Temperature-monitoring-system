@@ -2,8 +2,8 @@
 
 ## Prezentarea generala a circuitului:
 
-	Am abordat implementarea ca pe o serie de 4 sisteme tip "black-box", deoarece fiecare modul are intrari si iesiri, acestea putand fi create si testate separat,
-cu exceptia modulului temperature_top (care le imbina pe celelalte 3).
+	Am abordat implementarea ca pe o serie de 4 sisteme tip "black-box", deoarece fiecare modul are intrari si iesiri,
+acestea putand fi create si testate separat, cu exceptia modulului temperature_top (care le imbina pe celelalte 3).
 
 - In modulul *sensors_input*:
 
@@ -21,7 +21,7 @@ Totodata, in functie de limitele de temperatura prestabilite, am activat (dupa c
 
 --------------------------------------------------
 
-## Explicarea portiunilor complexe ale implementarii:
+## Detalii de implementare:
 
 In cod sunt comentarii care explica anumite portiuni, insa pe scurt:
 
@@ -52,8 +52,9 @@ concatenati cu bitii ce reprezinta numarul de senzori activi (nr_active_sensors_
 
 ## Explicatii referitoare la numarul variabil de parametri:
 
-	Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input si temperature_top (in functie de
-numarul de senzori de la care se citesc temperaturi). Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
+	Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input
+si temperature_top (in functie de numarul de senzori de la care se citesc temperaturi).
+Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
 iar acesta este instantiat in temperature_top, deci si acesta va folosi un parametru. In modulul sensors_input, am folosit operatorul
 +: pentru selectarea unui numar constat de biti cu punct de start variabil, pentru a parcurge bitii din sensors_data_i, si am marit dimensiunea variabilei
 de tip reg, i, pentru a putea creste pana la NR_OF_SENSORS (cand numarul de senzori creste pana la maxim 200).
