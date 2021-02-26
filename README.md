@@ -2,7 +2,7 @@
 
 ## Prezentarea generala a circuitului:
 
-	Am abordat implementarea ca pe o serie de 4 sisteme tip "black-box", deoarece fiecare modul are intrari si iesiri,
+   Am abordat implementarea ca pe o serie de 4 sisteme tip "black-box", deoarece fiecare modul are intrari si iesiri,
 acestea putand fi create si testate separat, cu exceptia modulului temperature_top (care le imbina pe celelalte 3).
 
 - In modulul *sensors_input*:
@@ -31,6 +31,7 @@ In cod sunt comentarii care explica anumite portiuni, insa pe scurt:
 intre suma totala a temperaturilor si numarul senzorilor activi corespunzatori acestora. Pentru a realiza aceasta medie,
 am utilizat versiunea pentru numere reprezentate in baza 2 a algoritmului "Long Division", al carui pseudocod
 se poate gasi aici: https://en.wikipedia.org/wiki/Division_algorithm.
+
 In bucla for, am tratat separat bitul de pe pozitia 0. Am observat ca atunci cand variabila i (pentru parcurgerea bitilor)
 devine 0 si din ea este scazut 1, aceasta (nefiind reprezentata cu semn) ia valoarea maxima pozitiva in binar pe dimensiunea pe care este reprezentata.
 
@@ -52,9 +53,9 @@ concatenati cu bitii ce reprezinta numarul de senzori activi (nr_active_sensors_
 
 ## Explicatii referitoare la numarul variabil de parametri:
 
-	Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input
-si temperature_top (in functie de numarul de senzori de la care se citesc temperaturi).
-Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
-iar acesta este instantiat in temperature_top, deci si acesta va folosi un parametru. In modulul sensors_input, am folosit operatorul
-+: pentru selectarea unui numar constat de biti cu punct de start variabil, pentru a parcurge bitii din sensors_data_i, si am marit dimensiunea variabilei
-de tip reg, i, pentru a putea creste pana la NR_OF_SENSORS (cand numarul de senzori creste pana la maxim 200).
+   Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input si temperature_top (in functie de numarul de senzori de la care se citesc temperaturi). Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
+iar acesta este instantiat in temperature_top, deci si acesta va folosi un parametru.
+
+   In modulul sensors_input, am folosit operatorul +: pentru selectarea unui numar constat de biti cu punct de start variabil,
+pentru a parcurge bitii din sensors_data_i, si am marit dimensiunea variabilei de tip reg, i, pentru a putea creste pana la NR_OF_SENSORS
+(cand numarul de senzori creste pana la maxim 200).
