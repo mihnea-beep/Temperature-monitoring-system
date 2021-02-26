@@ -53,10 +53,9 @@ concatenati cu bitii ce reprezinta numarul de senzori activi (nr_active_sensors_
 
 ## Explicatii referitoare la numarul variabil de parametri:
 
-    Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input si temperature_top (in functie de numarul de senzori de la care se citesc temperaturi).
-Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
+   Pentru a putea citi un numar de temperaturi ce poate varia, am parametrizat modulele sensors_input si temperature_top (in functie de numarul de senzori de la care se citesc temperaturi). Folosind parametrul NR_OF_SENSORS, marimile intrarilor din sensors_input se pot schimba,
 iar acesta este instantiat in temperature_top, deci si acesta va folosi un parametru.
 
-    In modulul sensors_input, am folosit operatorul +: pentru selectarea unui numar constat de biti cu punct de start variabil,
+   In modulul sensors_input, am folosit operatorul +: pentru selectarea unui numar constat de biti cu punct de start variabil,
 pentru a parcurge bitii din sensors_data_i, si am marit dimensiunea variabilei de tip reg, i, pentru a putea creste pana la NR_OF_SENSORS
 (cand numarul de senzori creste pana la maxim 200).
