@@ -1,1 +1,0 @@
-# Temperature-monitoring-system
